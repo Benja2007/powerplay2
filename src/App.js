@@ -29,12 +29,14 @@ function App() {
           Agregar
         </button>
       </div>
-      <h2>Lista de elementos:</h2>
+      <div classname="category">
+      <h3>Categorias:</h3>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }
