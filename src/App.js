@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import './styles.css'
+import './styles.css';
+import categorias from './categorias'; // Importa el archivo de categorías
 
 function App() {
-  // Estado para almacenar los elementos de la lista
   const [items, setItems] = useState([]);
-  // Estado para almacenar el elemento actual que se está escribiendo
   const [currentItem, setCurrentItem] = useState("");
 
-  // Función para manejar la adición de un elemento a la lista
-  const addItem = () => {
+  const search = () => {
+    // Aquí puedes implementar la lógica de búsqueda según tus necesidades
+    // Por ahora, simplemente agregaremos el término de búsqueda a la lista de elementos
     if (currentItem.trim() !== "") {
       setItems([...items, currentItem]);
       setCurrentItem("");
@@ -25,18 +25,18 @@ function App() {
           value={currentItem}
           onChange={(e) => setCurrentItem(e.target.value)}
         />
-        <button type="submit" onClick={addItem}>
-          Agregar
+        <button type="button" onClick={search}>
+          Buscar
         </button>
       </div>
-      <div classname="category">
-      <h3>Categorias:</h3>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
+      <ul className="item-list">
+      <h2>Categorías:</h2>
+        {categorias.map((categoria, index) => (
+          <li key={index}>
+            <div className="item-div">{categoria}</div>
+          </li>
         ))}
       </ul>
-      </div>
     </div>
   );
 }

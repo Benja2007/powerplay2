@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
-.category {
+/* Estilo para alinear la lista de elementos a la izquierda */
+.item-list {
   text-align: left;
+}
+
+/* Estilo para los elementos individuales en la lista */
+.item-list li {
+  margin-left: 0; /* Elimina cualquier margen izquierdo predeterminado */
 }
