@@ -1,0 +1,23 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.search-bar {
+  text-align: center; /* Centra el contenido horizontalmente */
+  margin-top: 50px; /* Agrega margen superior para separar de la parte superior */
+}
+
+.search-bar input {
+  padding: 5px;
+  margin-right: 10px;
+  width: 300px; /* Ajusta el ancho según tus preferencias */
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none;
+  cursor: pointer;
+}
