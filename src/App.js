@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import './styles.css';
-import categorias from './categorias'; // Importa el archivo de categorías
+import "./styles.css";
+import categorias from "./categorias";
+import Juegos from "./Juegos"; // Importa el nuevo componente
 
 function App() {
   const [items, setItems] = useState([]);
@@ -29,11 +30,13 @@ function App() {
           Buscar
         </button>
       </div>
-      <ul className="results"> 
+      <ul className="results">
         {/* Aqui se mostrarán los resultados */}
       </ul>
+      {/* Nuevo componente de juegos */}
+      <Juegos />
       <ul className="item-list">
-      <h2 className="category">Categorías:</h2>
+        <h2 className="categories">Categorías:</h2>
         {categorias.map((categoria, index) => (
           <li key={index}>
             <div className="item-div">{categoria}</div>

@@ -1,3 +1,5 @@
+import { isButtonElement } from "react";
+
 // categorias.js
 const categorias = [
     "Acción",

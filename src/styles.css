@@ -24,7 +24,7 @@
 }
 
 /*css para las categorias*/
-.category{
+.categories{
   color: #007bff;
 }
 /* Estilo para alinear la lista de elementos a la izquierda */
@@ -41,4 +41,12 @@
   border-color:#007bff;
   border-style:ridge;
   border-radius: 7px;
+}
+/*css para los Juegos*/
+.juegos{
+text-align: center;
+padding: 10px 10px;
+}
+.juego-list{
+  padding: 5px 5px;
 }
