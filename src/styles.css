@@ -3,6 +3,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #808080, #FF0000);
+  -webkit-background-clip: text; /* Propiedad para aplicar el degradado solo al texto */
+  color: transparent; /* Hace el texto transparente para que se muestre el degradado */
+  padding: 20px;
+  margin: 0;
+}
 /*css para la barra de busqueda*/
 .search-bar {
   text-align: center; /* Centra el contenido horizontalmente */
@@ -46,7 +61,17 @@
 .juegos{
 text-align: center;
 padding: 10px 10px;
+width: 40%;
 }
 .juego-list{
-  padding: 5px 5px;
+  border-radius: 10px;
+  border-style: ridge;
+  padding: 10px;
+}
+.juego-card img{
+  width: 200px;
+  height: auto;
+}
+.juego-card p{
+  font-size: 30px;
 }

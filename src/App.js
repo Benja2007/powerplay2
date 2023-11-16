@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import categorias from "./categorias";
 import Juegos from "./Juegos"; // Importa el nuevo componente
+import Login from "./Login";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>PowerPlay</h1>
+    <h1 className="gradient-text">PowerPlay</h1>
       <div className="search-bar">
         <input
           type="text"

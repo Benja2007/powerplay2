@@ -3,8 +3,8 @@ import React from "react";
 
 const juegos = [
   {
-    titulo: "Nombre del Juego 1",
-    imagen: "URL de la imagen 1",
+    titulo: "Minecraft",
+    imagen: "https://www.minecraft.net/content/dam/games/minecraft/key-art/SUPM_Game-Image_One-Vanilla_672x400.jpg",
   },
   {
     titulo: "Nombre del Juego 2",

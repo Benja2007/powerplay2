@@ -1,13 +1,16 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import App from "./App";
+import Login from "./Login";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+const Root = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  return loggedIn ? <App /> : <Login onLogin={handleLogin} />;
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
