@@ -29,8 +29,11 @@ function App() {
           Buscar
         </button>
       </div>
+      <ul className="results"> 
+        {/* Aqui se mostrarán los resultados */}
+      </ul>
       <ul className="item-list">
-      <h2>Categorías:</h2>
+      <h2 className="category">Categorías:</h2>
         {categorias.map((categoria, index) => (
           <li key={index}>
             <div className="item-div">{categoria}</div>
