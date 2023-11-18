@@ -79,7 +79,7 @@ width: 40%;
 display: flex;
 justify-content: space-around;
 align-items: flex-start;
-max-width: 64%;
+max-width: 65%;
 }
 .juego-list{
   border-radius: 10px;
