@@ -36,14 +36,7 @@ function App() {
       </ul>
       {/* Nuevo componente de juegos */}
       <Juegos />
-      <ul className="item-list">
-        <h2 className="categories">Categorías:</h2>
-        {categorias.map((categoria, index) => (
-          <li key={index}>
-            <div className="item-div">{categoria}</div>
-          </li>
-        ))}
-      </ul>
+      
     </div>
   );
 }

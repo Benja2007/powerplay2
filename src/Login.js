@@ -14,7 +14,20 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login">
-      <label>
+      <h1>Iniciar Sesion</h1>
+      <input 
+      type="text"
+      placeholder="Usuario"
+      />
+      <input
+      value={password}
+      onChange={e=>setPassword(e.target.value)}
+      type="password"
+      placeholder="Contraseña"
+      />
+      <button onClick={authenticate}>Enviar</button>
+      </div>
+      /*<label>
         Contraseña:
         <input
           type="password"
@@ -25,7 +38,7 @@ const Login = ({ onLogin }) => {
       <button type="button" onClick={authenticate}>
         Iniciar sesión
       </button>
-    </div>
+    </div>*/
   );
 };
 

@@ -1,3 +1,12 @@
+/*css para el login*/
+.login{
+  text-align: center;
+  padding-top: 5%;
+  padding-left: 44%;
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+}
 /*css para el app*/
 .App {
   font-family: sans-serif;
@@ -13,7 +22,8 @@ body {
 
 .gradient-text {
   background: linear-gradient(to right, #808080, #FF0000);
-  -webkit-background-clip: text; /* Propiedad para aplicar el degradado solo al texto */
+  -webkit-background-clip: text; /* Propiedad para aplicar el degradado solo al texto en navegadores WebKit */
+  background-clip: text; /* Propiedad estándar para aplicar el degradado solo al texto */
   color: transparent; /* Hace el texto transparente para que se muestre el degradado */
   padding: 20px;
   margin: 0;
@@ -27,7 +37,7 @@ body {
 .search-bar input {
   padding: 5px;
   margin-right: 10px;
-  width: 300px; /* Ajusta el ancho según tus preferencias */
+  width: 325px; /* Ajusta el ancho según tus preferencias */
 }
 
 .search-bar button {
@@ -39,8 +49,10 @@ body {
 }
 
 /*css para las categorias*/
-.categories{
+.categorias{
   color: #007bff;
+  text-align: left;
+  min-width: 50%;
 }
 /* Estilo para alinear la lista de elementos a la izquierda */
 .item-list {
@@ -60,16 +72,29 @@ body {
 /*css para los Juegos*/
 .juegos{
 text-align: center;
-padding: 10px 10px;
+padding: 10px;
 width: 40%;
+}
+.juegos-container {
+display: flex;
+justify-content: space-around;
+align-items: flex-start;
+max-width: 64%;
 }
 .juego-list{
   border-radius: 10px;
-  border-style: ridge;
+  border-style: none;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.juego-card{
+  text-align: center;
+  min-width: 325px;
+  
 }
 .juego-card img{
-  width: 200px;
+  width: 300px;
   height: auto;
 }
 .juego-card p{
