@@ -36,7 +36,6 @@ function App() {
       </ul>
       {/* Nuevo componente de juegos */}
       <Juegos />
-      
     </div>
   );
 }

@@ -6,9 +6,8 @@ const categorias = [
     "Aventura",
     "Estrategia",
     "Deportes",
-    "RPG",
-    "Zombies",
-    "Shooter",
+    "Rol",
+    "Simulacion",
     // Agrega más categorías según sea necesario
   ];
   
