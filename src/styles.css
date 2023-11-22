@@ -1,12 +1,5 @@
 /*css para el login*/
-.login{
-  text-align: center;
-  padding-top: 5%;
-  padding-left: 44%;
-  display: flex;
-  flex-direction: column;
-  width: 12%;
-}
+
 /*css para el app*/
 .App {
   font-family: sans-serif;
@@ -54,6 +47,9 @@ body {
   text-align: left;
   min-width: 50%;
 }
+.categorias h2{
+  color: white;
+}
 /* Estilo para alinear la lista de elementos a la izquierda */
 .item-list {
   text-align: left;
@@ -68,6 +64,7 @@ body {
   border-color:#007bff;
   border-style:ridge;
   border-radius: 7px;
+  background-color: white;
 }
 /*css para los Juegos*/
 .juegos{
