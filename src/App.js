@@ -17,8 +17,20 @@ function App() {
   const [currentItem, setCurrentItem] = useState("");
 
   const search = () => {
+    const busqueda = items.filter(item =>
+      item.nombre.toLowerCase().includes(currentItem.toLowerCase())
+      );
+      setItems(busqueda);
     // Aquí puedes implementar la lógica de búsqueda según tus necesidades
+    // En este caso, simplemente buscamos el item en la lista de items
+    const item = items.find(item => item.name === currentItem);
+    if (item) {
+      alert(`¡Encontrado! ${item.name}`);
+      } else {
+        alert("¡No encontrado!");
+        }
     // Por ahora, simplemente agregaremos el término de búsqueda a la lista de elementos
+    setItems([...items, currentItem]);
     if (currentItem.trim() !== "") {
       setItems([...items, currentItem]);
       setCurrentItem("");
@@ -47,5 +59,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
