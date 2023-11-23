@@ -7,7 +7,7 @@ import fondo from "./imagenes/imagen1.jpeg";
 
 function App() {
   const fondoStyle = {
-    backgroundImage: `url(${fondo})`, // Corrección en la línea que asigna la propiedad backgroundImage
+    backgroundImage: `url(${fondo})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
@@ -15,26 +15,41 @@ function App() {
 
   const [items, setItems] = useState([]);
   const [currentItem, setCurrentItem] = useState("");
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const search = () => {
-    const busqueda = items.filter(item =>
+    const busqueda = items.filter((item) =>
       item.nombre.toLowerCase().includes(currentItem.toLowerCase())
-      );
-      setItems(busqueda);
-    // Aquí puedes implementar la lógica de búsqueda según tus necesidades
-    // En este caso, simplemente buscamos el item en la lista de items
-    const item = items.find(item => item.name === currentItem);
+    );
+    setItems(busqueda);
+
+    const item = items.find((item) => item.name === currentItem);
     if (item) {
       alert(`¡Encontrado! ${item.name}`);
-      } else {
-        alert("¡No encontrado!");
-        }
-    // Por ahora, simplemente agregaremos el término de búsqueda a la lista de elementos
-    setItems([...items, currentItem]);
+    } else {
+      alert("¡No encontrado!");
+    }
+
     if (currentItem.trim() !== "") {
       setItems([...items, currentItem]);
       setCurrentItem("");
     }
+  };
+
+  const toggleSubMenu = (category) => {
+    setShowSubMenu(!showSubMenu);
+    setSelectedCategory(category);
+  };
+
+  const subcategorias = {
+    Acción: ["Aventura Acción", "Disparos", "Luchas"],
+    Aventura: ["Aventura Gráfica", "Mundo Abierto"],
+    Estrategia: ["Estrategia en Tiempo Real", "Estrategia por Turnos"],
+    Deportes: ["Fútbol", "Baloncesto", "Automovilismo"],
+    Rol: ["RPG de Acción", "RPG por Turnos"],
+    Simulacion: ["Simulación de Vida", "Simulación de Negocios"],
+    // Agrega más subcategorías según sea necesario
   };
 
   return (
@@ -51,12 +66,28 @@ function App() {
           Buscar
         </button>
       </div>
-      <ul className="results">
-        {/* Aquí se mostrarán los resultados */}
-      </ul>
+      <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
+      <div className="categorias">
+        <h2>Categorías</h2>
+        <ul className="item-list">
+          {categorias.map((categoria, index) => (
+            <li key={index} onClick={() => toggleSubMenu(categoria)}>
+              {categoria}
+              {showSubMenu && selectedCategory === categoria && (
+                <ul className="subcategorias">
+                  {subcategorias[categoria].map((subcategoria, subIndex) => (
+                    <li key={subIndex}>{subcategoria}</li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
       {/* Nuevo componente de juegos */}
       <Juegos />
     </div>
   );
 }
+
 export default App;

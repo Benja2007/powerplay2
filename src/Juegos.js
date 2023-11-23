@@ -1,11 +1,18 @@
 // Juegos.js
 import React, { useState } from "react";
 import categorias from "./categorias";
+import fondo from "./imagenes/imagen1.jpeg";
+
 
 const Juegos = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+  const handleClick = (e) => {
+    setShowSubMenu(!showSubMenu);
+    setSelectedCategory(e.target.id);
+    openGameDetails({titulo: e.target.value});
+   };
   const subcategorias = {
     Acción: ["Aventura Acción", "Disparos", "Luchas"],
     Aventura: ["Aventura Gráfica", "Mundo Abierto"],
@@ -14,11 +21,6 @@ const Juegos = () => {
     Rol: ["RPG de Acción", "RPG por Turnos"],
     Simulacion: ["Simulación de Vida", "Simulación de Negocios"],
     // Agrega más subcategorías según sea necesario
-  };
-
-  const toggleSubMenu = (category) => {
-    setShowSubMenu(!showSubMenu);
-    setSelectedCategory(category);
   };
   const openGameDetails = (juego) => {
     const nuevaPestana = window.open("", "_blank");
@@ -35,11 +37,12 @@ const Juegos = () => {
   };
   
 
+
   const juegos = [
     {
       titulo: "Minecraft",
       imagen: "https://www.minecraft.net/content/dam/games/minecraft/key-art/SUPM_Game-Image_One-Vanilla_672x400.jpg",
-      descripcion: "Minecraft es un juego de construcción...",
+      descripcion: "Es un videojuego tipo sandbox, su traducción literal sería “caja de arena” y es lo que representa la experiencia de juego. Los jugadores pueden modelar el mundo a su gusto, destruir y construir, como si estuviesen jugando en una caja de arena.",
       informacion: "Desarrollador: Mojang | Lanzamiento: 2011",
       enlaces: {
         plataforma1: "https://www.minecraft.net/",
@@ -50,7 +53,7 @@ const Juegos = () => {
     {
       titulo: "League Of Legends",
       imagen: "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/UNYVC3MXWBCDZB63W6NLY4XG4U.jpg",
-      descripcion: "League of Legends es un juego de...",
+      descripcion: "Esto no es un juego...",
       informacion: "Desarrollador: Riot Games | Lanzamiento: 2009",
       enlaces: {
         plataforma1: "https://na.leagueoflegends.com/",
@@ -60,7 +63,7 @@ const Juegos = () => {
     {
       titulo: "Fortnite",
       imagen: "https://cdn2.unrealengine.com/fortnite-chapter-4-og-overview-page-key-art-bg-1920x1080-1fbc3a1c0297.jpg",
-      descripcion: "Fortnite es un juego de batalla real...",
+      descripcion: "Es un juego de tipo batalla real en el que compiten hasta cien jugadores en solitario, dúos, tríos o escuadrones. Los jugadores saltan de un autobús que cruza el mapa en el momento que deseen, y empiezan sin armas.",
       informacion: "Desarrollador: Epic Games | Lanzamiento: 2017",
       enlaces: {
         plataforma1: "https://www.epicgames.com/fortnite/",
@@ -340,23 +343,6 @@ const Juegos = () => {
 
   return (
     <div className="category-container">
-    <div className="categorias">
-      <h2>Categorías</h2>
-      <ul className="item-list">
-        {categorias.map((categoria, index) => (
-          <li key={index} onClick={() => toggleSubMenu(categoria)}>
-            {categoria}
-            {showSubMenu && selectedCategory === categoria && (
-              <ul className="subcategorias">
-                {subcategorias[categoria].map((subcategoria, subIndex) => (
-                  <li key={subIndex}>{subcategoria}</li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
       <div className="juegos">
         <h2>Juegos</h2>
         <div className="juego-list">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import fondo1 from "./imagenes/imagen2.jpg";
+import videoLogo from "./imagenes/logo.mp4";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -34,6 +35,19 @@ const Login = ({ onLogin }) => {
       backgroundSize: "cover", 
       backgroundAttachment: "fixed" 
       }}>
+         <video
+        autoPlay
+        muted
+        loop
+        style={{
+          width: "300px", // Ajusta el tamaño según tus necesidades
+          borderRadius: "50%", // O cualquier otro estilo que desees
+        }}
+      >
+        <source src={videoLogo} type="video/mp4" />
+        Tu navegador no admite el elemento de video.
+      </video>
+      
       <h1>Iniciar Sesión o Registrarse</h1>
       <input 
         type="text" 
