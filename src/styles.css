@@ -152,6 +152,14 @@ body {
 .juego-card p{
   font-size: 30px;
 }
+.Window-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
 /*css para las subcategorias*/
 .subcategorias {
   list-style-type: none;

@@ -1,7 +1,6 @@
 // Juegos.js
 import React, { useState } from "react";
 import categorias from "./categorias";
-import fondo from "./imagenes/imagen1.jpeg";
 
 
 const Juegos = () => {
