@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles.css";
 import categorias from "./categorias";
-import Juegos from "./Juegos"; // Importa el nuevo componente
+import Juegos from "./Juegos";
+import DetallesJuego from "./DetallesJuegos";
 import Login from "./Login";
 import fondo from "./imagenes/imagen1.jpeg";
 
@@ -53,40 +55,32 @@ function App() {
   };
 
   return (
-    <div className="App" style={fondoStyle}>
-      <h1 className="gradient-text">PowerPlay</h1>
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Buscar videojuegos"
-          value={currentItem}
-          onChange={(e) => setCurrentItem(e.target.value)}
+    <Router>
+      <Routes>
+        <Route
+          path="/juegos"
+          element={(
+            <div className="App" style={fondoStyle}>
+              <h1 className="gradient-text">PowerPlay</h1>
+              <div className="search-bar">
+                <input
+                  type="text"
+                  placeholder="Buscar videojuegos"
+                  value={currentItem}
+                  onChange={(e) => setCurrentItem(e.target.value)}
+                />
+                <button type="button" onClick={search}>
+                  Buscar
+                </button>
+              </div>
+              <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
+              <Juegos/>
+            </div>
+          )}
         />
-        <button type="button" onClick={search}>
-          Buscar
-        </button>
-      </div>
-      <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
-      <div className="categorias">
-        <h2>Categorías</h2>
-        <ul className="item-list">
-          {categorias.map((categoria, index) => (
-            <li key={index} onClick={() => toggleSubMenu(categoria)}>
-              {categoria}
-              {showSubMenu && selectedCategory === categoria && (
-                <ul className="subcategorias">
-                  {subcategorias[categoria].map((subcategoria, subIndex) => (
-                    <li key={subIndex}>{subcategoria}</li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-      {/* Nuevo componente de juegos */}
-      <Juegos />
-    </div>
+        <Route path="/juegos/:id" element={<DetallesJuego />} />
+      </Routes>
+    </Router>
   );
 }
 

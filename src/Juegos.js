@@ -2,16 +2,10 @@
 import React, { useState } from "react";
 import categorias from "./categorias";
 
-
 const Juegos = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const handleClick = (e) => {
-    setShowSubMenu(!showSubMenu);
-    setSelectedCategory(e.target.id);
-    openGameDetails({titulo: e.target.value});
-   };
   const subcategorias = {
     Acción: ["Aventura Acción", "Disparos", "Luchas"],
     Aventura: ["Aventura Gráfica", "Mundo Abierto"],
@@ -20,6 +14,11 @@ const Juegos = () => {
     Rol: ["RPG de Acción", "RPG por Turnos"],
     Simulacion: ["Simulación de Vida", "Simulación de Negocios"],
     // Agrega más subcategorías según sea necesario
+  };
+
+  const toggleSubMenu = (category) => {
+    setShowSubMenu(!showSubMenu);
+    setSelectedCategory(category);
   };
   const openGameDetails = (juego) => {
     const nuevaPestana = window.open("", "_blank");
@@ -331,6 +330,156 @@ const Juegos = () => {
         plataforma2: "https://store.steampowered.com/agecheck/app/271590/?l=spanish",
       },
     },
+    {
+      titulo: "Sea of Thieves",
+      imagen: "https://logos-world.net/wp-content/uploads/2021/02/Sea-Of-Thieves-Emblem.png",
+      descripcion: "Embárcate en una aventura pirata en un mundo compartido lleno de tesoros, criaturas y otros jugadores.",
+      informacion: "Desarrollador: Rare Ltd. | Lanzamiento: 2018",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/1172620/Sea_of_Thieves_2023_Edition/",
+        plataforma2: "https://www.xbox.com/es-ar/games/store/sea-of-thieves-2023-edition/9p2n57mc619k",
+      },
+    },
+    {
+      titulo: "Forza Horizon 5",
+      imagen: "https://store-images.s-microsoft.com/image/apps.28758.13734397844529069.202e3fc9-37d6-4853-a58b-fabe504b71e8.4335e940-f927-4be4-af08-8e689a17bd7a?q=90&w=177&h=177",
+      descripcion: "Disfruta de carreras en un mundo abierto ambientado en México, con gráficos impresionantes y una amplia variedad de autos.",
+      informacion: "Desarrollador: Playground Games | Lanzamiento: 2021",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/1551360/Forza_Horizon_5/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/forza-horizon-5",
+      },
+    },
+    {
+      titulo: "Forza Horizon 4",
+      imagen: "https://store-images.s-microsoft.com/image/apps.2050.14339303838396367.725ab8dd-f8b7-4a29-a351-45ebd5d66edd.101ea039-4868-42ba-a0fe-835c1b2f1a52?q=90&w=177&h=177",
+      descripcion: "Explora la hermosa campiña británica en un juego de carreras de mundo abierto con una amplia variedad de autos y desafíos.",
+      informacion: "Desarrollador: Playground Games | Lanzamiento: 2018",
+      enlaces: {
+        plataforma1: "https://www.xbox.com/es-AR/games/forza-horizon-4",
+        plataforma2: "https://store.steampowered.com/app/1293830/Forza_Horizon_4/",
+      },
+    },
+    {
+      titulo: "Brawlhalla",
+      imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202305/1523/5aaaa377b9a4803f932a1aa4f4b18d8b12ca7c29490dfb14.jpg",
+      descripcion: "Enfréntate a otros jugadores en intensas peleas de plataformas en este juego de lucha gratuito con personajes únicos.",
+      informacion: "Desarrollador: Blue Mammoth Games | Lanzamiento: 2017",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/291550/Brawlhalla/?l=spanish",
+        plataforma2: "https://www.ubisoft.com/es-mx/game/brawlhalla/brawlhalla",
+      },
+    },
+    {
+      titulo: "Subnautica",
+      imagen: "https://acdn.mitiendanube.com/stores/001/159/532/products/subnau1-a97ab06423a52ba80e15898394833978-640-0.jpg",
+      descripcion: "Sumérgete en las profundidades de un planeta alienígena, recolecta recursos y sobrevive a criaturas marinas en este juego de aventuras submarinas.",
+      informacion: "Desarrollador: Unknown Worlds Entertainment | Lanzamiento: 2018",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/264710/Subnautica/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/subnautica/bx3s1q5dvhrd",
+      },
+    },
+    {
+      titulo: "Subnautica: Below Zero",
+      imagen: "https://image.api.playstation.com/vulcan/ap/rnd/202103/1000/ajXEVMJhzxXuOezVXR6bFOkK.png",
+      descripcion: "Explora un mundo helado alienígena, construye bases submarinas y descubre los secretos ocultos en la secuela de Subnautica.",
+      informacion: "Desarrollador: Unknown Worlds Entertainment | Lanzamiento: 2021",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/848450/Subnautica_Below_Zero/",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/subnautica-below-zero/9NDCJXL11096",
+      },
+    },
+    {
+      titulo: "Fall Guys: Ultimate Knockout",
+      imagen: "https://cdn2.unrealengine.com/egs-fallguys-mediatonic-g1a-00-1920x1080-75b891d04ff9.jpg",
+      descripcion: "Participa en competiciones caóticas en línea con otros jugadores en este divertido juego de batallas reales.",
+      informacion: "Desarrollador: Mediatonic | Lanzamiento: 2020",
+      enlaces: {
+        plataforma1: "https://store.epicgames.com/es-ES/p/fall-guys",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/fall-guys/9PMXH5249DG5",
+      },
+    },
+    {
+      titulo: "Overwatch 2",
+      imagen: "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Overwatch2_Season6.png",
+      descripcion: "Prepárate para intensas batallas en equipo en este juego de disparos en primera persona, la secuela del exitoso Overwatch.",
+      informacion: "Desarrollador: Blizzard Entertainment | Lanzamiento: 2022",
+      enlaces: {
+        plataforma1: "https://overwatch.blizzard.com/es-es/",
+        plataforma2: "https://us.shop.battle.net/es-es/product/overwatch",
+      },
+    },
+    {
+      titulo: "Call of Duty: Black Ops 3",
+      imagen: "https://m.media-amazon.com/images/M/MV5BNWMwYmE3NmMtZjFlYS00Y2M0LTljOTEtY2NhNGQ3Y2E1MWQyXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
+      descripcion: "Sumérgete en un conflicto militar futurista con habilidades mejoradas y enfrentamientos en este juego de la serie Call of Duty.",
+      informacion: "Desarrollador: Treyarch | Lanzamiento: 2015",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/agecheck/app/311210/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/call-of-duty-black-ops-iii/C3Q2WWJJ2T1H",
+      },
+    },
+    {
+      titulo: "Call of Duty: Black Ops 2",
+      imagen: "https://cdn.akamai.steamstatic.com/steam/apps/202970/capsule_616x353.jpg?t=1654830020",
+      descripcion: "Viaja al pasado reciente y participa en operaciones encubiertas en este exitoso juego de la serie Call of Duty.",
+      informacion: "Desarrollador: Treyarch | Lanzamiento: 2012",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/agecheck/app/202970/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/call-of-duty-black-ops-ii/c1qjm5xt9sxv",
+      },
+    },
+    {
+      titulo: "Call of Duty: Black Ops",
+      imagen: "https://cdn.akamai.steamstatic.com/steam/apps/42700/capsule_616x353.jpg?t=1654809667",
+      descripcion: "Experimenta la Guerra Fría y participa en operaciones secretas en este clásico juego de la serie Call of Duty.",
+      informacion: "Desarrollador: Treyarch | Lanzamiento: 2010",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/agecheck/app/42700/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/call-of-duty-black-ops/bvmgcsx6xpc9",
+      },
+    },
+    {
+      titulo: "The Binding of Isaac",
+      imagen: "https://fontmeme.com/images/binding-of-isaac-box-font.jpg",
+      descripcion: "Juego nefasto...xd",
+      informacion: "Desarrollador: Edmund McMillen | Lanzamiento: 2011",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/113200/The_Binding_of_Isaac/",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/the-binding-of-isaac-rebirth/BQD45PQR4F4J",
+      },
+    },
+    {
+      titulo: "The Outlast Trials",
+      imagen: "https://cdn1.epicgames.com/6504cc61472e498796e0b4963a201438/offer/EGS_TheOutlastTrials_RedBarrels_S1-2560x1440-94e9ca382991373a4a464665014a78d4.jpg",
+      descripcion: "Sobrevive a horrores cooperativos en este juego de terror ambientado en la Guerra Fría, parte de la serie Outlast.",
+      informacion: "Desarrollador: Red Barrels | Lanzamiento: 2023",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/1304930/The_Outlast_Trials/",
+        plataforma2: "https://store.epicgames.com/es-ES/p/the-outlast-trials",
+      },
+    },
+    {
+      titulo: "Outlast 2",
+      imagen: "https://cdn.akamai.steamstatic.com/steam/apps/414700/capsule_616x353.jpg?t=1618944453",
+      descripcion: "Explora un entorno aterrador y descubre los oscuros secretos de una secta en esta secuela del exitoso Outlast.",
+      informacion: "Desarrollador: Red Barrels | Lanzamiento: 2017",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/414700/Outlast_2/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/outlast-2/BZVPNM21TCJC",
+      },
+    },
+    {
+      titulo: "Outlast",
+      imagen: "https://image.api.playstation.com/cdn/UP2113/CUSA00325_00/M7Xcn9Q7mUkmm3dSilcsbkORlPPiQ0VK.png",
+      descripcion: "Adéntrate en el manicomio de Mount Massive y descubre horrores inimaginables en este juego de terror psicológico.",
+      informacion: "Desarrollador: Red Barrels | Lanzamiento: 2013",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/238320/Outlast/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/outlast/BP3GH4D3HP2H",
+      },
+    },
     
 
     // Agrega más juegos según sea necesario
@@ -342,6 +491,23 @@ const Juegos = () => {
 
   return (
     <div className="category-container">
+    <div className="categorias">
+      <h2>Categorías</h2>
+      <ul className="item-list">
+        {categorias.map((categoria, index) => (
+          <li key={index} onClick={() => toggleSubMenu(categoria)}>
+            {categoria}
+            {showSubMenu && selectedCategory === categoria && (
+              <ul className="subcategorias">
+                {subcategorias[categoria].map((subcategoria, subIndex) => (
+                  <li key={subIndex}>{subcategoria}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
       <div className="juegos">
         <h2>Juegos</h2>
         <div className="juego-list">
