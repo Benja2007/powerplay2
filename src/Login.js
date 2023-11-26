@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import fondo1 from "./imagenes/imagen2.jpg";
+import fondo1 from "./imagenes/fondomov1.gif";
 import videoLogo from "./imagenes/logo.mp4";
 import Juegos from "./Juegos"; // Importa el componente Juegos
 
@@ -40,8 +40,16 @@ const Login = ({ onLogin }) => {
   const renderContent = () => {
     if (isRegistered) {
       return (
-        <>
-          <h1>Iniciar Sesión</h1>
+        <div className="login-text">
+          <div className="login-form">
+          <div className="card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div className="login-content">
+            <h1>Iniciar Sesión</h1>
+            <div className="field">
           <input
             type="text"
             placeholder="Usuario"
@@ -54,6 +62,7 @@ const Login = ({ onLogin }) => {
             type="password"
             placeholder="Contraseña"
           />
+          </div>
           <button onClick={authenticate}>Enviar</button>
           <p>
             ¿No tienes cuenta?{" "}
@@ -64,12 +73,26 @@ const Login = ({ onLogin }) => {
               Regístrate
             </button>
           </p>
-        </>
+          </div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          </div>
+        </div>
       );
     } else {
       return (
-        <>
+        <div className="register-text">
+          <div className="register-form">
+          <div className="card1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div className="register-content">
           <h1>Registrarse</h1>
+          <div className="field1">
           <input
             type="text"
             placeholder="Usuario"
@@ -82,8 +105,15 @@ const Login = ({ onLogin }) => {
             type="password"
             placeholder="Contraseña"
           />
+          </div>
           <button onClick={authenticate}>Registrarse</button>
-        </>
+          </div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          </div>
+        </div>
       );
     }
   };
@@ -94,7 +124,7 @@ const Login = ({ onLogin }) => {
         className="login"
         style={{
           backgroundImage: `url(${fondo1})`,
-          height: "96vh",
+          height: "100vh",
           width: "100%",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -123,10 +153,6 @@ const Login = ({ onLogin }) => {
           element={<Navigate to="/juegos" />}
         />
         {/* Ruta de juegos */}
-        <Route
-          path="/juegos"
-          element={<Juegos />}
-        />
       </Routes>
     </Router>
   );

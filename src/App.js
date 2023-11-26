@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import "./styles.css";
 import categorias from "./categorias";
 import Juegos from "./Juegos";
 import DetallesJuego from "./DetallesJuegos";
 import Login from "./Login";
-import fondo from "./imagenes/imagen1.jpeg";
+import fondo from "./imagenes/fondodef1.jpg";
 
 function App() {
   const fondoStyle = {
@@ -78,7 +78,13 @@ function App() {
             </div>
           )}
         />
-        <Route path="/juegos/:id" element={<DetallesJuego />} />
+        <Route
+          path="/juegos"
+          element={<Navigate to="/juegos/:id" />}
+        />
+        <Route 
+        path="/juegos/:id" 
+        element={<DetallesJuego />} />
       </Routes>
     </Router>
   );

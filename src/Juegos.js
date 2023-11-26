@@ -480,6 +480,76 @@ const Juegos = () => {
         plataforma2: "https://www.xbox.com/es-AR/games/store/outlast/BP3GH4D3HP2H",
       },
     },
+    {
+      titulo: "Five Nights at Freddy's",
+      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/9/95/FiveNightsAtFreddys.png/revision/latest?cb=20150712042809&path-prefix=es",
+      descripcion: "Enfréntate a terroríficos animatronics mientras trabajas como guardia de seguridad nocturno en Freddy Fazbear's Pizza.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2014",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/319510/Five_Nights_at_Freddys/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/five-nights-at-freddys/9N5253J559LR",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's 2",
+      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/e/ee/FNaF2_-_Portada.png/revision/latest?cb=20141117165616&path-prefix=es",
+      descripcion: "Vuelve a la aterradora pizzería, esta vez con nuevos animatronics y más peligros en tu turno nocturno.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2014",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/332800/Five_Nights_at_Freddys_2/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-EC/games/store/five-nights-at-freddys-2/9nbr2zsd99fx",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's 3",
+      imagen: "https://assetsio.reedpopcdn.com/co6fyk.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp",
+      descripcion: "Explora una nueva ubicación con un horror renovado mientras enfrentas a Springtrap y otros peligros.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2015",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/354140/Five_Nights_at_Freddys_3/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/five-nights-at-freddys-3/9P6N7LQ4HZFD",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's 4",
+      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/2/28/FNaF4_-_Portada.jpg/revision/latest?cb=20150722220108&path-prefix=es",
+      descripcion: "Sumérgete en el terror en la habitación de un niño mientras te enfrentas a los animatronics en este juego de la serie FNaF.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2015",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/388090/Five_Nights_at_Freddys_4/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/five-nights-at-freddys-4/9pldlmplr7jv",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's: Sister Location",
+      imagen: "https://static.wikia.nocookie.net/fnaf-sister-location/images/c/c4/SLIcon.jpg/revision/latest?cb=20160801195954",
+      descripcion: "Trabaja en Circus Baby's Pizza World y enfrenta nuevos desafíos y personajes en esta entrega de la serie.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2016",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/506610/Five_Nights_at_Freddys_Sister_Location/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/five-nights-at-freddys-sister-location/9ndh606jxlwj",
+      },
+    },
+    {
+      titulo: "Freddy Fazbear's Pizzeria Simulator",
+      imagen: "https://store-images.s-microsoft.com/image/apps.59889.13682780537640100.576cf9e6-eb8e-4a72-84ca-3f229c8fab47.e6e1dfd5-3a47-4689-be49-ebd619fc1fa9?q=90&w=480&h=270",
+      descripcion: "Administra tu propia pizzería y descubre los oscuros secretos que se esconden detrás de esta simulación inesperada.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2017",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/738060/Freddy_Fazbears_Pizzeria_Simulator/",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/freddy-fazbears-pizzeria-simulator/9NJ5VQGQH7K1",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's: Help Wanted",
+      imagen: "https://image.api.playstation.com/cdn/UP0638/CUSA15930_00/wMD21HRlZLFIPRQd4pqkIwHGJ2Broq41.png",
+      descripcion: "Experimenta los eventos de los juegos anteriores y más en realidad virtual mientras te enfrentas a los sustos de FNaF.",
+      informacion: "Desarrollador: Steel Wool Studios | Lanzamiento: 2019",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/732690/FIVE_NIGHTS_AT_FREDDYS_HELP_WANTED/?l=spanish",
+        plataforma2: "https://www.xbox.com/es-ar/games/store/five-nights-at-freddys-help-wanted/9p731fvpm8ww",
+      },
+    },
     
 
     // Agrega más juegos según sea necesario

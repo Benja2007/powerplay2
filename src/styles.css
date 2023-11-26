@@ -1,4 +1,395 @@
 /*css para el login*/
+.login-text{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+.login-form{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  }
+  .login-content{
+    width: 201px;
+  padding: 30px 51px;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  }
+  .text-content .text{
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #595959;
+  }
+  .field{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  .field:nth-child(2){
+    margin-top: 20px;
+  }
+  .field input{
+    height: 100%;
+    width: 100%;
+    padding-left: 4px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+                inset -5px -5px 10px #ffffff73;
+  }
+  .field input:focus{
+    box-shadow: inset 1px 1px 2px #BABECC,
+                inset -1px -1px 2px #ffffff73;
+  }
+  .field span{
+    position: absolute;
+    color: #595959;
+    width: 50px;
+    line-height: 50px;
+  }
+  .field label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45px;
+    pointer-events: none;
+    color: #666666;
+  }
+  .field input:valid ~ label{
+    opacity: 0;
+  }
+  .login-content button{
+    margin: 7px 0;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 600;
+    background: #dde1e7;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #595959;
+    box-shadow: 2px 2px 5px #BABECC,
+               -5px -5px 10px #ffffff73;
+  }
+  button:focus{
+    color: #3498db;
+    box-shadow: inset 2px 2px 5px #BABECC,
+               inset -5px -5px 10px #ffffff73;
+  }
+  .card {
+   position: relative;
+   background: #2a0e6b;
+   width: 300px;
+   height: 360px;
+   overflow: hidden;
+   padding: 15px;
+   border-radius: 15px;
+}
+.card span:nth-child(1) 
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   background: linear-gradient(to right, transparent,
+   rgb(93, 30, 175));
+   animation: animate_one 2s linear infinite;
+}
+
+@keyframes animate_one
+{
+   0%
+   {
+      transform: translateX(-100%);
+   }
+   100%
+   {
+      transform: translateX(100%);
+   }
+}
+
+.card span:nth-child(2) 
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 10px;
+   height: 100%;
+   background: linear-gradient(to bottom, transparent,
+   rgb(93, 30, 175));
+   animation: animate_two 2s linear infinite;
+   animation-delay: 1s ;
+}
+
+@keyframes animate_two
+{
+   0%
+   {
+      transform: translateY(-100%);
+   }
+   100%
+   {
+      transform: translateY(100%);
+   }
+}
+
+.card span:nth-child(3) 
+{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   background: linear-gradient(to left, transparent,
+   rgb(93, 30, 175));
+   animation: animate_three 2s linear infinite;
+}
+
+@keyframes animate_three
+{
+   0%
+   {
+      transform: translateX(100%);
+   }
+   100%
+   {
+      transform: translateX(-100%);
+   }
+}
+
+.card span:nth-child(4) 
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 100%;
+   background: linear-gradient(to top, transparent,
+   rgb(93, 30, 175));
+   animation: animate_four 2s linear infinite;
+   animation-delay: 1s;
+}
+
+@keyframes animate_four
+{
+   0%
+   {
+      transform: translateY(100%);
+   }
+   100%
+   {
+      transform: translateY(-100%);
+   }
+}
+.register-text{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+.register-form{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  }
+  .register-content{
+    width: 201px;
+  padding: 30px 51px;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  }
+  .text-content .text{
+    font-size: 33px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #595959;
+  }
+  .field1{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  .field1:nth-child(2){
+    margin-top: 20px;
+  }
+  .field1 input{
+    height: 100%;
+    width: 100%;
+    padding-left: 4px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: #dde1e7;
+    color: #595959;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #BABECC,
+                inset -5px -5px 10px #ffffff73;
+  }
+  .field1 input:focus{
+    box-shadow: inset 1px 1px 2px #BABECC,
+                inset -1px -1px 2px #ffffff73;
+  }
+  .field1 span{
+    position: absolute;
+    color: #595959;
+    width: 50px;
+    line-height: 50px;
+  }
+  .field1 label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 45px;
+    pointer-events: none;
+    color: #666666;
+  }
+  .field1 input:valid ~ label{
+    opacity: 0;
+  }
+  .register-content button{
+    margin: 7px 0;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 600;
+    background: #dde1e7;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #595959;
+    box-shadow: 2px 2px 5px #BABECC,
+               -5px -5px 10px #ffffff73;
+  }
+  button:focus{
+    color: #3498db;
+    box-shadow: inset 2px 2px 5px #BABECC,
+               inset -5px -5px 10px #ffffff73;
+  }
+  .card1 {
+    position: relative;
+    background: #2a0e6b;
+    width: 300px;
+    height: 220px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card1 span:nth-child(1) 
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   background: linear-gradient(to right, transparent,
+   rgb(93, 30, 175));
+   animation: animate_one 2s linear infinite;
+}
+
+@keyframes animate_one
+{
+   0%
+   {
+      transform: translateX(-100%);
+   }
+   100%
+   {
+      transform: translateX(100%);
+   }
+}
+
+.card1 span:nth-child(2) 
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 10px;
+   height: 100%;
+   background: linear-gradient(to bottom, transparent,
+   rgb(93, 30, 175));
+   animation: animate_two 2s linear infinite;
+   animation-delay: 1s ;
+}
+
+@keyframes animate_two
+{
+   0%
+   {
+      transform: translateY(-100%);
+   }
+   100%
+   {
+      transform: translateY(100%);
+   }
+}
+
+.card1 span:nth-child(3) 
+{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 10px;
+   background: linear-gradient(to left, transparent,
+   rgb(93, 30, 175));
+   animation: animate_three 2s linear infinite;
+}
+
+@keyframes animate_three
+{
+   0%
+   {
+      transform: translateX(100%);
+   }
+   100%
+   {
+      transform: translateX(-100%);
+   }
+}
+
+.card1 span:nth-child(4) 
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 100%;
+   background: linear-gradient(to top, transparent,
+   rgb(93, 30, 175));
+   animation: animate_four 2s linear infinite;
+   animation-delay: 1s;
+}
+
+@keyframes animate_four
+{
+   0%
+   {
+      transform: translateY(100%);
+   }
+   100%
+   {
+      transform: translateY(-100%);
+   }
+}
 /*css para el app*/
 .App {
   font-family: sans-serif;

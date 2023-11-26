@@ -1,6 +1,6 @@
 // DetallesJuego.js
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Router, Routes, useParams } from "react-router-dom";
 
 
 const DetallesJuego = () => {
@@ -28,6 +28,11 @@ const DetallesJuego = () => {
   }
 
   return (
+    <Router>
+      <Routes>
+        <Route
+          path="/juegos/:id"
+          element={(
     <div>
       <h1>{juego.titulo}</h1>
       <img src={juego.imagen} alt={juego.titulo} />
@@ -41,6 +46,10 @@ const DetallesJuego = () => {
       </a>
       {/* Add more links as necessary */}
     </div>
+    )}
+      />
+      </Routes>
+    </Router>
   );
 };
 
