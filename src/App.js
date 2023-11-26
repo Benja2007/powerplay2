@@ -5,7 +5,7 @@ import categorias from "./categorias";
 import Juegos from "./Juegos";
 import DetallesJuego from "./DetallesJuegos";
 import Login from "./Login";
-import fondo from "./imagenes/fondodef1.jpg";
+import fondo from "./imagenes/imagenmov3.gif";
 
 function App() {
   const fondoStyle = {

@@ -5,7 +5,6 @@ import categorias from "./categorias";
 const Juegos = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
-
   const subcategorias = {
     Acción: ["Aventura Acción", "Disparos", "Luchas"],
     Aventura: ["Aventura Gráfica", "Mundo Abierto"],
@@ -482,7 +481,7 @@ const Juegos = () => {
     },
     {
       titulo: "Five Nights at Freddy's",
-      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/9/95/FiveNightsAtFreddys.png/revision/latest?cb=20150712042809&path-prefix=es",
+      imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/319510/header.jpg?t=1666889251",
       descripcion: "Enfréntate a terroríficos animatronics mientras trabajas como guardia de seguridad nocturno en Freddy Fazbear's Pizza.",
       informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2014",
       enlaces: {
@@ -492,7 +491,7 @@ const Juegos = () => {
     },
     {
       titulo: "Five Nights at Freddy's 2",
-      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/e/ee/FNaF2_-_Portada.png/revision/latest?cb=20141117165616&path-prefix=es",
+      imagen: "https://cdn-www.bluestacks.com/bs-images/com.scottgames.fnaf2_.jpg",
       descripcion: "Vuelve a la aterradora pizzería, esta vez con nuevos animatronics y más peligros en tu turno nocturno.",
       informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2014",
       enlaces: {
@@ -512,7 +511,7 @@ const Juegos = () => {
     },
     {
       titulo: "Five Nights at Freddy's 4",
-      imagen: "https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/2/28/FNaF4_-_Portada.jpg/revision/latest?cb=20150722220108&path-prefix=es",
+      imagen: "https://image.api.playstation.com/vulcan/img/cfn/11307lJXV6jMrabrKwzNFK94riCQC90Ogs2z0X1LWyX9oDA0W1zmbIw3V-eLTiw-q-kW_7MfwoEOQH-ZEVPPuRX1gDM0TYhw.png",
       descripcion: "Sumérgete en el terror en la habitación de un niño mientras te enfrentas a los animatronics en este juego de la serie FNaF.",
       informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2015",
       enlaces: {
@@ -522,7 +521,7 @@ const Juegos = () => {
     },
     {
       titulo: "Five Nights at Freddy's: Sister Location",
-      imagen: "https://static.wikia.nocookie.net/fnaf-sister-location/images/c/c4/SLIcon.jpg/revision/latest?cb=20160801195954",
+      imagen: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b5a3564a-b113-4f9e-b5e5-386108005e7a/dcknqhp-6ae238ee-736a-4527-bebe-4eaed9db3d1b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I1YTM1NjRhLWIxMTMtNGY5ZS1iNWU1LTM4NjEwODAwNWU3YVwvZGNrbnFocC02YWUyMzhlZS03MzZhLTQ1MjctYmViZS00ZWFlZDlkYjNkMWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.GdZGknzPMkDRUFIoxLSLdd6Y4tHA-F48nkxezHOqBuo",
       descripcion: "Trabaja en Circus Baby's Pizza World y enfrenta nuevos desafíos y personajes en esta entrega de la serie.",
       informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2016",
       enlaces: {
@@ -548,6 +547,36 @@ const Juegos = () => {
       enlaces: {
         plataforma1: "https://store.steampowered.com/app/732690/FIVE_NIGHTS_AT_FREDDYS_HELP_WANTED/?l=spanish",
         plataforma2: "https://www.xbox.com/es-ar/games/store/five-nights-at-freddys-help-wanted/9p731fvpm8ww",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's World",
+      imagen: "https://tr.rbxcdn.com/783497390a64eddf3461b04d8ce83b40/500/280/Image/Jpeg",
+      descripcion: "Embárcate en una aventura única en un mundo de fantasía con los personajes de FNaF en este juego de rol.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 2016",
+      enlaces: {
+        plataforma1: "https://steamcommunity.com/app/427920?l=spanish",
+        plataforma2: "https://world.es.aptoide.com/app",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's: Delivery",
+      imagen: "https://play-lh.googleusercontent.com/fFcYA0NvhDipw0Heblrnp1xvzJ6L9bEH1p004tj5qlhs_VNKi0rby6gnisxV8BY72w",
+      descripcion: "Participa en la entrega de pizzas y enfréntate a nuevos desafíos mientras interactúas con los animatronics.",
+      informacion: "Desarrollador: Scott Cawthon | Lanzamiento: 209",
+      enlaces: {
+        plataforma1: "https://special-delivery-illumix-inc.es.aptoide.com/app",
+        plataforma2: "https://play.google.com/store/apps/details?id=com.illumix.fnafar&hl=es&gl=US&pli=1",
+      },
+    },
+    {
+      titulo: "Five Nights at Freddy's: Security Breach",
+      imagen: "https://image.api.playstation.com/vulcan/img/rnd/202112/0804/2UTMvRFqn4SdaoxhtQnxchcn.png",
+      descripcion: "Explora un centro comercial y enfrenta nuevos peligros en este capítulo de la serie FNaF.",
+      informacion: "Desarrollador: Steel Wool Studios | Lanzamiento: 2021",
+      enlaces: {
+        plataforma1: "https://store.steampowered.com/app/747660/Five_Nights_at_Freddys_Security_Breach/",
+        plataforma2: "https://www.xbox.com/es-AR/games/store/five-nights-at-freddys-security-breach/9NMP8KFRTNCD",
       },
     },
     
