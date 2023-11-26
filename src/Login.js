@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import fondo1 from "./imagenes/fondomov1.gif";
+import fondoAlternativo from "./imagenes/imagenmov4.gif";
 import videoLogo from "./imagenes/logo.mp4";
 import Juegos from "./Juegos"; // Importa el componente Juegos
 
 const Login = ({ onLogin }) => {
+  const [fondoActual, setFondoActual] = useState(fondo1);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isRegistered, setIsRegistered] = useState(false);
+
+  const cambiarFondo = () => {
+    // Cambia entre los fondos
+    const nuevoFondo = fondoActual === fondo1 ? fondoAlternativo : fondo1;
+    setFondoActual(nuevoFondo);
+  };
 
   useEffect(() => {
     const storedUser = localStorage.getItem("currentUser");
@@ -41,6 +49,18 @@ const Login = ({ onLogin }) => {
     if (isRegistered) {
       return (
         <div className="login-text">
+          <div
+        className="login"
+        style={{
+          backgroundImage: `url(${fondoActual})`,
+          height: "100vh",
+          width: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed"
+        }}
+      >
+      </div>
           <div className="login-form">
           <div className="card">
             <span></span>
@@ -73,6 +93,8 @@ const Login = ({ onLogin }) => {
               Regístrate
             </button>
           </p>
+          {/* Botón para cambiar el fondo */}
+      <button onClick={cambiarFondo}>Cambiar Fondo</button>
           </div>
             <span></span>
             <span></span>

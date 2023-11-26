@@ -1,6 +1,7 @@
 // Juegos.js
 import React, { useState } from "react";
 import categorias from "./categorias";
+import fondo from "./imagenes/fondodef1.jpg";
 
 const Juegos = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
@@ -22,16 +23,55 @@ const Juegos = () => {
   const openGameDetails = (juego) => {
     const nuevaPestana = window.open("", "_blank");
     nuevaPestana.document.write(`
-      <h1>${juego.titulo}</h1>
-      <img src="${juego.imagen}" alt="${juego.titulo}" />
-      <p>${juego.descripcion}</p>
-      <p>${juego.informacion}</p>
-      <a href="${juego.enlaces.plataforma1}" target="_blank" rel="noopener noreferrer">Plataforma 1</a>
-      <a href="${juego.enlaces.plataforma2}" target="_blank" rel="noopener noreferrer">Plataforma 2</a>
-      <!-- Agrega más enlaces según sea necesario -->
+      <html>
+        <head>
+          <style>
+            body {
+              font-family: 'Arial', sans-serif;
+              color: white;
+              background-image: url('${fondo}');
+              background-size: cover; /* Ajusta el tamaño de la imagen */
+              background-position: center; /* Centra la imagen */
+              padding: 20px;
+              text-align: center;
+            }
+            h1 {
+              color: white;
+              font-size: 70px;
+            }
+            img {
+              max-width: 100%;
+              height: 75vh;
+              margin-top: 20px;
+            }
+            p {
+              color: white;
+              margin-top: 40px;
+              margin-bottom: 15px;
+              font-size: 25px;
+            }
+            a {
+              color: violet;
+              text-decoration: none;
+              margin-right: 10px;
+              font-size: 40px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>${juego.titulo}</h1>
+          <img src="${juego.imagen}" alt="${juego.titulo}" />
+          <p>${juego.descripcion}</p>
+          <p>${juego.informacion}</p>
+          <a href="${juego.enlaces.plataforma1}" target="_blank" rel="noopener noreferrer">Plataforma 1</a>
+          <a href="${juego.enlaces.plataforma2}" target="_blank" rel="noopener noreferrer">Plataforma 2</a>
+          <!-- Agrega más enlaces según sea necesario -->
+        </body>
+      </html>
     `);
     nuevaPestana.document.close();
   };
+  
   
 
 
@@ -991,8 +1031,14 @@ const Juegos = () => {
     juego.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const fondoStyle = {
+    backgroundImage: `url(${fondo})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundAttachment: "fixed"
+  };
   return (
-    <div className="category-container">
+    <div className="juegos-container">
         <div className="search-bar">
         <input
         type="text"
@@ -1006,7 +1052,7 @@ const Juegos = () => {
           {filteredJuegos.map((juego, index) => (
             <div
               key={index}
-              className="juego-card"
+              className="juego-card" style={fondoStyle}
               onClick={() => openGameDetails(juego)}
             >
               <img src={juego.imagen} alt={juego.titulo} />

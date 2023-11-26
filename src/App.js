@@ -7,13 +7,21 @@ import DetallesJuego from "./DetallesJuegos";
 import SearchBar from './SearchBar';
 import fondo from "./imagenes/imagenmov3.gif";
 import video from "./imagenes/PP.mp4";
-
+import fondoAlternativo from "./imagenes/imagen1.jpeg"; // Importa tu otro fondo
 function App() {
+  const [fondoActual, setFondoActual] = useState(fondo);
+
   const fondoStyle = {
-    backgroundImage: `url(${fondo})`,
+    backgroundImage: `url(${fondoActual})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
+  };
+
+  const cambiarFondo = () => {
+    // Cambia entre los fondos
+    const nuevoFondo = fondoActual === fondo ? fondoAlternativo : fondo;
+    setFondoActual(nuevoFondo);
   };
 
   const [items, setItems] = useState([]);
@@ -74,24 +82,29 @@ function App() {
                   Tu navegador no admite el elemento de video.
                 </video>
               <h1 className="gradient-text">PowerPlay</h1>
+              <button onClick={cambiarFondo}>Cambiar Fondo</button>
               {/* agregue las categorias desde los juegos al app*/}
-              <div className="categorias">
-      <h2>Categorías</h2>
-      <ul className="item-list">
-        {categorias.map((categoria, index) => (
-          <li key={index} onClick={() => toggleSubMenu(categoria)}>
-            {categoria}
-            {showSubMenu && selectedCategory === categoria && (
-              <ul className="subcategorias">
-                {subcategorias[categoria].map((subcategoria, subIndex) => (
-                  <li key={subIndex}>{subcategoria}</li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div> 
+    <div className="category-container">
+      <div className="card2">
+      <div className="categorias">
+          <h2>Categorías</h2>
+          <ul className="item-list">
+            {categorias.map((categoria, index) => (
+             <li key={index} onClick={() => toggleSubMenu(categoria)}>
+               {categoria}
+               {showSubMenu && selectedCategory === categoria && (
+                 <ul className="subcategorias">
+                   {subcategorias[categoria].map((subcategoria, subIndex) => (
+                    <li key={subIndex}>{subcategoria}</li>
+                  ))}
+                 </ul>
+               )}
+             </li>
+             ))}
+          </ul>
+        </div>
+      </div>
+    </div>
               <div className="search-bar">
               </div>
               <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>

@@ -93,9 +93,9 @@
    position: relative;
    background: #2a0e6b;
    width: 300px;
-   height: 360px;
+   height: 390px;
    overflow: hidden;
-   padding: 15px;
+   padding: 10px;
    border-radius: 15px;
 }
 .card span:nth-child(1) 
@@ -403,8 +403,7 @@
 .video-clase {
   width: 320px; /* ajusta según tus necesidades */
   height: 240px; /* ajusta según tus necesidades */
-}
-
+  }
 
 .App-header {
   background-color: #282c34;
@@ -449,12 +448,27 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #808080, #FF0000);
-  -webkit-background-clip: text; /* Propiedad para aplicar el degradado solo al texto en navegadores WebKit */
-  background-clip: text; /* Propiedad estándar para aplicar el degradado solo al texto */
-  color: transparent; /* Hace el texto transparente para que se muestre el degradado */
-  padding: 20px;
+  background: -webkit-linear-gradient(#ee4b4b, #ca0202);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 40px;
   margin: 0;
+  border: none;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.7), inset 1px
+  1px 1px 2px rgba(255,255,255,.9);
+  box-decoration-break: clone;
 }
 /*css para la barra de busqueda*/
 .search-bar {
@@ -472,21 +486,82 @@ body {
 }
 
 /*css para las categorias*/
-.category-conteiner{
+@property --rotate{
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+:root{
+  --card-height:50vh;
+  --card-width: 30vh;
+}
+.category-container{
+  margin:0;
+  background-image: transparent;
   display: flex;
+  align-items:center;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+  gap: 1rem;
+  }
+  .categorias{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    color: white;
 }
-.categorias{
-  color: #fafafa;
-  text-align: left;
-  min-width: 50%;
-  margin-top: 50px;
+.card2{
+  animation: animacao 10s infinite cubic-bezier(.3,-0.1,1,.68);
+  animation-delay: calc(var(--i)*4s);
+  will-change: transform;
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
 }
-.categorias h2{
-  color: white;
+.card2:hover{
+  color: rgb(255, 255, 255);
+  transition: color 1s;
+}
+.card2:hover::before {
+  animation: none;
+  opacity: 1;
+}
+.card2::before{
+  content: "";
+  width: 104%;
+  height: 104%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+.card2::after{
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 5);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 5));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  0%{
+    --rotate : 0deg;
+  }100%{
+    --rotate : 360deg;
+  }
 }
 /* Estilo para alinear la lista de elementos a la izquierda */
 .item-list {
@@ -498,28 +573,34 @@ body {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em;
 }
-
 /* Estilo para los elementos individuales en la lista */
 .item-list li {
   margin-left: 0; /* Elimina cualquier margen izquierdo predeterminado */
-  border-color:#FF0000;
-  border-style: double;   /*double*/
+  border-color:#40f1f1;
+  border-style: groove;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
   padding: 3px;
   margin-bottom: 10px;
   cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgb(90, 160, 25),
+  inset 0 0 0 1px rgb(90, 160, 255);
+  transition: all 0.2s ease-out;
+  }
+  .item-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgb(90, 160, 25
+    ),
+    inset 0 0 0 1px rgb(90, 160, 255);
+    transition: all 0.2s ease-out;
   }
 /*css para los Juegos*/
 .juegos{
-  color: red;
+  color: white;
   text-align: center;
   min-width: 50%;
-}
-.juegos h2{
-  color: red;
-  font-size: 50px;
 }
 
 .juego-list{
@@ -564,4 +645,5 @@ body {
 
 .subcategorias li:hover {
   color: rgb(138, 14, 14); /* Cambia el color al pasar el ratón por encima */
+
 } 
