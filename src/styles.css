@@ -511,64 +511,12 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,.5);
     color: white;
 }
-.card2{
-  animation: animacao 10s infinite cubic-bezier(.3,-0.1,1,.68);
-  animation-delay: calc(var(--i)*4s);
-  will-change: transform;
-  background: #191c29;
-  width: var(--card-width);
-  height: var(--card-height);
-}
-.card2:hover{
-  color: rgb(255, 255, 255);
-  transition: color 1s;
-}
-.card2:hover::before {
-  animation: none;
-  opacity: 1;
-}
-.card2::before{
-  content: "";
-  width: 104%;
-  height: 104%;
-  border-radius: 8px;
-  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
-}
-.card2::after{
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 5);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 5));
-  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
-  opacity: 1;
-  transition: opacity .5s;
-  animation: spin 2.5s linear infinite;
-}
-@keyframes spin {
-  0%{
-    --rotate : 0deg;
-  }100%{
-    --rotate : 360deg;
-  }
-}
 /* Estilo para alinear la lista de elementos a la izquierda */
 .item-list {
   text-align: left;
   list-style-type: none; /* Elimina los puntos de la lista */
   padding: 5px 5px;
-  width: 115px;
+  width: 140px;
   margin: 0;
   color: white;
   border-radius: 5px;

@@ -48,13 +48,13 @@ const Juegos = () => {
               color: white;
               margin-top: 40px;
               margin-bottom: 15px;
-              font-size: 25px;
+              font-size: 30px;
             }
             a {
               color: violet;
               text-decoration: none;
               margin-right: 10px;
-              font-size: 40px;
+              font-size: 35px;
             }
           </style>
         </head>
@@ -87,6 +87,8 @@ const Juegos = () => {
         plataforma2: "https://www.microsoft.com/",
         // Agrega más enlaces según sea necesario
       },
+      categoria:"Aventura",
+      subcategoria:"Mundo Abierto",
     },
     {
       id:2,
@@ -1026,7 +1028,6 @@ const Juegos = () => {
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
-
   const filteredJuegos = juegos.filter((juego) =>
     juego.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );

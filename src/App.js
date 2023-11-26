@@ -84,27 +84,7 @@ function App() {
               <h1 className="gradient-text">PowerPlay</h1>
               <button onClick={cambiarFondo}>Cambiar Fondo</button>
               {/* agregue las categorias desde los juegos al app*/}
-    <div className="category-container">
-      <div className="card2">
-      <div className="categorias">
-          <h2>Categorías</h2>
-          <ul className="item-list">
-            {categorias.map((categoria, index) => (
-             <li key={index} onClick={() => toggleSubMenu(categoria)}>
-               {categoria}
-               {showSubMenu && selectedCategory === categoria && (
-                 <ul className="subcategorias">
-                   {subcategorias[categoria].map((subcategoria, subIndex) => (
-                    <li key={subIndex}>{subcategoria}</li>
-                  ))}
-                 </ul>
-               )}
-             </li>
-             ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    
               <div className="search-bar">
               </div>
               <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
