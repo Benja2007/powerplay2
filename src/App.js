@@ -4,8 +4,9 @@ import "./styles.css";
 import categorias from "./categorias";
 import Juegos from "./Juegos";
 import DetallesJuego from "./DetallesJuegos";
-import Login from "./Login";
+import SearchBar from './SearchBar';
 import fondo from "./imagenes/imagenmov3.gif";
+import video from "./imagenes/PP.mp4";
 
 function App() {
   const fondoStyle = {
@@ -43,7 +44,7 @@ function App() {
     setShowSubMenu(!showSubMenu);
     setSelectedCategory(category);
   };
-
+  
   const subcategorias = {
     Acción: ["Aventura Acción", "Disparos", "Luchas"],
     Aventura: ["Aventura Gráfica", "Mundo Abierto"],
@@ -61,17 +62,37 @@ function App() {
           path="/juegos"
           element={(
             <div className="App" style={fondoStyle}>
+              <video className="video-clase"
+                autoPlay
+                loop
+                muted
+                src={video[0].src}
+                type="video/mp4"
+                id="myVideo" 
+                >
+                <source src={video} type="video/mp4" />
+                  Tu navegador no admite el elemento de video.
+                </video>
               <h1 className="gradient-text">PowerPlay</h1>
+              {/* agregue las categorias desde los juegos al app*/}
+              <div className="categorias">
+      <h2>Categorías</h2>
+      <ul className="item-list">
+        {categorias.map((categoria, index) => (
+          <li key={index} onClick={() => toggleSubMenu(categoria)}>
+            {categoria}
+            {showSubMenu && selectedCategory === categoria && (
+              <ul className="subcategorias">
+                {subcategorias[categoria].map((subcategoria, subIndex) => (
+                  <li key={subIndex}>{subcategoria}</li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div> 
               <div className="search-bar">
-                <input
-                  type="text"
-                  placeholder="Buscar videojuegos"
-                  value={currentItem}
-                  onChange={(e) => setCurrentItem(e.target.value)}
-                />
-                <button type="button" onClick={search}>
-                  Buscar
-                </button>
               </div>
               <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
               <Juegos/>
