@@ -288,7 +288,7 @@
     position: relative;
     background: #2a0e6b;
     width: 300px;
-    height: 220px;
+    height: 250px;
     overflow: hidden;
     padding: 15px;
     border-radius: 15px;
@@ -395,15 +395,61 @@
 .App {
   text-align: center;
   }
+  .gradient-text {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 6em;
+    line-height: 1;
+    padding: 0 1rem;
+  }
   .App .gradient-text{
-    font-size: 80px;
-    color: red;
-    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, #ffaaee ,#ffccee );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow( 2px 2px 2px black );
   }
 .video-clase {
-  width: 320px; /* ajusta según tus necesidades */
-  height: 240px; /* ajusta según tus necesidades */
+  height: 280px;
+  width: 320px;
   }
+  .App button{ 
+    margin: auto;
+    display: block;
+    border: none;
+    outline: 0;
+    padding: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #fafafa;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 6
+    px 20px 0 rgba(0,0,0,.19);
+    transition: all .3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    z-index: 1;
+    font-size: 30px;
+  }
+
+.App button:before, .App button:after { 
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: inherit;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.App button:hover:before, .App button:hover:after {  
+  opacity: 1;
+}
+
+.App button:hover{ 
+  transform: translateY(-7px);
+}
 
 .App-header {
   background-color: #282c34;
@@ -446,30 +492,6 @@ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
 }
-
-.gradient-text {
-  background: -webkit-linear-gradient(#ee4b4b, #ca0202);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: 40px;
-  margin: 0;
-  border: none;
-  width: auto;
-  height: auto;
-  line-height: normal;
-  display: inline-block;
-  font-weight: bold;
-  letter-spacing: 4px;
-  word-spacing: 4px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 2em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-shadow: 1px 1px 2px rgba(0,0,0,.7), inset 1px
-  1px 1px 2px rgba(255,255,255,.9);
-  box-decoration-break: clone;
-}
 /*css para la barra de busqueda*/
 .search-bar {
   text-align: center; /* Centra el contenido horizontalmente */
@@ -480,9 +502,10 @@ body {
 .search-bar input {
   padding: 5px;
   margin-right: 10px;
-  width: 400px; /* Ajusta el ancho según tus preferencias */
-  height: 30px;
+  width: 450px; /* Ajusta el ancho según tus preferencias */
+  height: 40px;
   border-radius: 10px;
+  font-size: 30px;
 }
 
 /*css para las categorias*/

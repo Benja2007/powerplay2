@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import "./styles.css";
 import categorias from "./categorias";
@@ -7,9 +7,12 @@ import DetallesJuego from "./DetallesJuegos";
 import SearchBar from './SearchBar';
 import fondo from "./imagenes/imagenmov3.gif";
 import video from "./imagenes/PP.mp4";
-import fondoAlternativo from "./imagenes/imagen1.jpeg"; // Importa tu otro fondo
+import fondoAlternativo from "./imagenes/navidad.gif"; // Importa tu otro fondo
+import musica from "./imagenes/navidad.mp3"; 
+
 function App() {
   const [fondoActual, setFondoActual] = useState(fondo);
+  const [playing, setPlaying] = useState(false);
 
   const fondoStyle = {
     backgroundImage: `url(${fondoActual})`,
@@ -22,7 +25,27 @@ function App() {
     // Cambia entre los fondos
     const nuevoFondo = fondoActual === fondo ? fondoAlternativo : fondo;
     setFondoActual(nuevoFondo);
+    setPlaying(true);
+    setTimeout(() => {
+      setPlaying(false);
+    }, 60000);
   };
+  useEffect(() => {
+    const audio = new Audio(musica);
+
+    if (playing) {
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    return () => {
+      
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [playing]);
+
 
   const [items, setItems] = useState([]);
   const [currentItem, setCurrentItem] = useState("");
@@ -69,6 +92,7 @@ function App() {
         <Route
           path="/juegos"
           element={(
+           <div className="App-container">
             <div className="App" style={fondoStyle}>
               <video className="video-clase"
                 autoPlay
@@ -83,6 +107,7 @@ function App() {
                 </video>
               <h1 className="gradient-text">PowerPlay</h1>
               <button onClick={cambiarFondo}>Cambiar Fondo</button>
+              
               {/* agregue las categorias desde los juegos al app*/}
     
               <div className="search-bar">
@@ -90,6 +115,7 @@ function App() {
               <ul className="results">{/* Aquí se mostrarán los resultados */}</ul>
               <Juegos/>
             </div>
+           </div>
           )}
         />
         <Route

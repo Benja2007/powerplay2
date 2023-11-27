@@ -129,6 +129,7 @@ const Login = ({ onLogin }) => {
           />
           </div>
           <button onClick={authenticate}>Registrarse</button>
+          <button onClick={cambiarFondo}>Cambiar Fondo</button>
           </div>
             <span></span>
             <span></span>
